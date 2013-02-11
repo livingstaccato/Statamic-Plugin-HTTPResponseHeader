@@ -14,7 +14,7 @@ class Plugin_http_response_header extends Plugin {
     global $app;
 
     $if_user_agent = $this->fetch_param('if_user_agent', null, 'is_string', false, false);
-    $header = $this->fetch_param('header', null, 'is_string', false, false);
+    $field = $this->fetch_param('field', null, 'is_string', false, false);
     $value = $this->fetch_param('value', null, 'is_string', false, false);
     $meta = $this->fetch_param('meta', false, false, true);
 
@@ -24,13 +24,13 @@ class Plugin_http_response_header extends Plugin {
     if (!empty($if_user_agent) && (strpos($user_agent, $if_user_agent) === false))
       return false;
 
-    if (!empty($header) && !empty($value)) {
+    if (!empty($field) && !empty($value)) {
 
       if (!empty($app))
-        $app->response()->header($header, $value);
+        $app->response()->header($field, $value);
 
       if ($meta)
-        return '<meta http-equiv="'.$header.'" content="'.$value.'" />';
+        return '<meta http-equiv="'.$field.'" content="'.$value.'" />';
 
     }
 
