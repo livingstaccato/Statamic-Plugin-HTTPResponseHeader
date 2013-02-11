@@ -1,7 +1,7 @@
 Statamic HTTP Response-Header Plugin
 ================================
 
-The HTTP Response-Header plugin can be used to conditionally add headers to the HTTP response as well as adding <meta http-equiv... /> to your page layouts.
+The HTTP Response-Header plugin can be used to conditionally add headers to the HTTP response as well as adding &lt;meta http-equiv... /&gt; to your page layouts.
 
 ## Installing
 1. Download the zip file (or clone via git) and unzip it or clone the repo into `/_add-ons/`.
@@ -34,7 +34,7 @@ The HTTP response-header field value.
 ### Meta `meta`
 **default: no**
 
-Return a <meta http-equiv="`<field>`" content="`<value>`" /> tag.
+Return a &lt;meta http-equiv="`<field>`" content="`<value>`" /&gt; tag.
 
     meta="yes"
 
